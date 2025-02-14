@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@/public/images/logo.png";
 import { Link } from "react-scroll";
 
@@ -10,6 +10,30 @@ import { RiMenu4Fill } from "react-icons/ri";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollingDown, setScrollingDown] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      // If scrolling down
+      if (currentScrollPos > prevScrollPos) {
+        setScrollingDown(true);
+      } else {
+        setScrollingDown(false);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   const navLinks = [
     {
       name: "Home",
@@ -17,38 +41,43 @@ const Navbar = () => {
     },
     {
       name: "About Me",
-      path: "#about",
+      path: "about",
     },
     {
       name: "Experience",
-      path: "#exp",
+      path: "exp",
     },
     {
       name: "Skills",
-      path: "#skills",
+      path: "skills",
     },
     {
       name: "Projects",
-      path: "#projects",
+      path: "projects",
     },
   ];
 
   return (
     <div>
-      <div className="flex justify-between items-center border-b px-6 py-1 md:px-10 md:py-2">
+      <div
+        className={`fixed top-0 z-50 w-full flex items-center justify-between border-b border-gray-700 text-white px-6 md:px-10 lg:px-16 py-1 md:py-3 transition-transform backdrop-blur-3xl ${
+          scrollingDown ? "fixed -translate-y-full" : "translate-y-0"
+        }`}
+      >
         <div>
-          <Image src={logo} width={50} height={50} />
+          <Image src={logo} alt="logo" width={50} height={50} />
         </div>
         {/* Nav */}
         <div>
-          <nav className="md:flex gap-6 hidden">
+          <nav className="md:flex gap-10 hidden text-lg">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
+                offset={-80}
                 smooth={true}
                 duration={400}
-                className="before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer"
+                className="before:w-0 hover:before:w-full before:bg-cyan-300 before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-cyan-300 transition-all duration-300 before:left-0 cursor-pointer"
               >
                 {link.name}
               </Link>
@@ -65,15 +94,16 @@ const Navbar = () => {
       <aside
         className={`${
           menuOpen ? "translate-x-0" : " translate-x-[1000px]"
-        } md:hidden absolute  flex flex-col gap-3 text-center bg-cyan-50 p-6 w-full md:w-[300px] top-[59px] md:top-[67px] transition-all duration-500`}
+        } md:hidden fixed flex flex-col gap-3 text-center bg-cyan-50 text-black p-6 w-full md:w-[300px] top-[59px] md:top-[67px] transition-all duration-300`}
       >
         {navLinks.map((link) => (
           <Link
             key={link.path}
             to={link.path}
+            offset={-80}
             smooth={true}
             duration={400}
-            className="hover:text-cyan-800 cursor-pointer"
+            className="hover:text-cyan-300"
           >
             {link.name}
           </Link>

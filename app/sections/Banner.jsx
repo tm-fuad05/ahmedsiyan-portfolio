@@ -1,9 +1,139 @@
+"use client";
 import React from "react";
+import profile from "@/public/images/profile.png";
+import arrow from "@/public/images/arrow.png";
+import Image from "next/image";
+import { Typewriter } from "react-simple-typewriter";
+import { motion } from "motion/react";
+
+// ICons
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
+import { IoLogoGithub } from "react-icons/io";
 
 const Banner = () => {
+  const socialLink = [
+    {
+      icon: <FaLinkedinIn />,
+      link: "",
+    },
+    {
+      icon: <FaXTwitter />,
+      link: "",
+    },
+    {
+      icon: <FaFacebookF />,
+      link: "",
+    },
+    {
+      icon: <IoLogoGithub />,
+      link: "",
+    },
+  ];
+
   return (
-    <div>
-      <h1>Banner</h1>
+    <div className="min-h-screen px-6 md:px-10 lg:px-16 flex items-center pt-10">
+      <div className="absolute left-[50px] -top-0 w-[400px] h-[400px] rounded-full blur-[300px] bg-cyan-300/50" />
+
+      {/* Main */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-16 z-10 relative">
+        {/* Arrow */}
+        <Image
+          src={arrow}
+          alt="Arrow"
+          className="absolute w-16 -top-8 rotate-[200deg] left-1/3 opacity-10 hidden lg:block"
+        />
+        {/* Content */}
+        <div className="flex flex-col gap-3 md:w-1/2">
+          <h4 className="text-lg lg:text-xl font-medium">
+            Hello, I'm Intisar Ahmed Siyan
+          </h4>
+
+          <h1
+            className={`text-4xl lg:text-5xl h-[95px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-white/80 tracking-tight mb-4`}
+          >
+            <Typewriter
+              words={[
+                "Full Stack Developer",
+                "Turning Ideas into Reality with Code",
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </h1>
+          <p className="text-sm text-gray-300">
+            Passionate web developer with expertise in React and modern
+            JavaScript. Crafting intuitive and dynamic user experiences, focused
+            on building scalable and performance-driven applications.
+          </p>
+          <div className="flex gap-4 mt-3">
+            <button className="bg-gradient-to-r from-cyan-400 px-4 py-2 rounded-md  hover:to-white/70 transition duration-300 font-[500]">
+              Resume
+            </button>
+            <button className="border border-cyan-400 px-4 py-2 rounded-md hover:shadow-sm hover:shadow-cyan-500 duration-300 font-[500]">
+              Contact Me
+            </button>
+          </div>
+          <div className="flex w-full flex-col border-opacity-50">
+            <div className="divider">Stay Connected</div>
+          </div>
+          <div className="flex gap-3 justify-center">
+            {socialLink.map((s) => (
+              <div
+                key={s.link}
+                className="border border-cyan-400 rounded-[4px] p-1.5 hover:shadow-sm hover:shadow-cyan-300 cursor-pointer duration-200"
+              >
+                {s.icon}
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Profile picture */}
+        <figure className="relative">
+          <div className="absolute inset-0 rounded-[150px] rounded-tr-lg rounded-bl-2xl z-[-1] bg-gradient-to-br from-cyan-500/20 via-sky-500/20 to-cyan-500/20  animate-pulse"></div>
+
+          <Image
+            src={profile}
+            alt="Intisar Ahmed Siyan"
+            className="rounded-[150px] rounded-tr-lg rounded-bl-2xl border-r-[3px] border-b-[3px] border-cyan-600 shadow-lg shadow-cyan-500 w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] object-cover"
+          />
+          <motion.div
+            animate={{
+              y: [0, 5, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+            }}
+            className="absolute -left-[30px] md:-left-[80px] top-0 md:top-10 text-black font-[500] bg-pink-50 rounded-lg text-xs md:text-md lg:text-[16px] px-5 py-2 text-center leading-5"
+          >
+            <span className="block text-xl md:text-2xl lg:text-3xl font-bold text-pink-600">
+              2+
+            </span>{" "}
+            Years Experience
+          </motion.div>
+          <motion.div
+            animate={{
+              y: [0, 5, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+            }}
+            className="absolute -right-3 md:right-[0px] bottom-5 text-black font-[600] bg-sky-100 rounded-lg text-xs lg:text-md lg:text-[16px] px-5 py-2 text-center leading-5"
+          >
+            <span className="block text-xl md:text-2xl lg:text-3xl font-bold text-cyan-700">
+              5+
+            </span>{" "}
+            Satisfied Clients
+          </motion.div>
+        </figure>
+      </div>
     </div>
   );
 };

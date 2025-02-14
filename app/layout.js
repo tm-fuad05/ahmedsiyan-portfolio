@@ -1,4 +1,4 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -6,6 +6,12 @@ import Footer from "./components/Footer";
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-fira-code",
 });
 
 export const metadata = {
@@ -16,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={`  ${montserrat.className} bg-gray-900 text-white`}>
         <header>
           <Navbar />
         </header>
