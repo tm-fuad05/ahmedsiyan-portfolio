@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`  ${montserrat.className} bg-gray-900 text-white`}>
+      <body className={`  ${montserrat.className} bg-black text-white`}>
         <header>
           <Navbar />
         </header>

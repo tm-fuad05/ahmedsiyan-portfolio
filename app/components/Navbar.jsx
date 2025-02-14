@@ -77,7 +77,7 @@ const Navbar = () => {
                 offset={-80}
                 smooth={true}
                 duration={400}
-                className="before:w-0 hover:before:w-full before:bg-cyan-300 before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-cyan-300 transition-all duration-300 before:left-0 cursor-pointer"
+                className="before:w-0 hover:before:w-full before:bg-blue-300 before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-blue-300 transition-all duration-300 before:left-0 cursor-pointer"
               >
                 {link.name}
               </Link>
@@ -94,16 +94,16 @@ const Navbar = () => {
       <aside
         className={`${
           menuOpen ? "translate-x-0" : " translate-x-[1000px]"
-        } md:hidden fixed flex flex-col gap-3 text-center bg-cyan-50 text-black p-6 w-full md:w-[300px] top-[59px] md:top-[67px] transition-all duration-300`}
+        } md:hidden fixed flex flex-col gap-3 text-center bg-white/20 backdrop-blur-lg text-black p-6 w-full md:w-[300px] top-[59px] md:top-[67px] transition-all duration-300 z-50`}
       >
         {navLinks.map((link) => (
           <Link
-            key={link.path}
+            key={link.name}
             to={link.path}
             offset={-80}
             smooth={true}
             duration={400}
-            className="hover:text-cyan-300"
+            className="hover:text-blue-300 cursor-pointer text-white"
           >
             {link.name}
           </Link>

@@ -7,12 +7,12 @@ import Projects from "./sections/Projects";
 
 export default function Home() {
   return (
-    <div className="space-y-[300px]">
+    <div className="">
       <Banner />
-      {/* <AboutMe />
-      <Experience />
-      <Skills />
-      <Projects /> */}
+      <AboutMe />
+      {/* <Experience /> */}
+      {/* <Skills /> */}
+      <Projects />
     </div>
   );
 }

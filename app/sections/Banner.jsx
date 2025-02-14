@@ -7,7 +7,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { motion } from "motion/react";
 
 // ICons
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaDownload, FaLinkedinIn, FaPhone, FaPhoneAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io";
@@ -33,8 +33,8 @@ const Banner = () => {
   ];
 
   return (
-    <div className="min-h-screen px-6 md:px-10 lg:px-16 flex items-center pt-10">
-      <div className="absolute left-[50px] -top-0 w-[400px] h-[400px] rounded-full blur-[300px] bg-cyan-300/50" />
+    <div className="min-h-screen px-6 md:px-10 lg:px-16 flex items-center pt-20 md:pt-10">
+      <div className="absolute left-[50px] -top-0 w-[450px] h-[450px] rounded-full blur-[270px] bg-secondary/60" />
 
       {/* Main */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-16 z-10 relative">
@@ -51,7 +51,7 @@ const Banner = () => {
           </h4>
 
           <h1
-            className={`text-4xl lg:text-5xl h-[95px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-white/80 tracking-tight mb-4`}
+            className={`text-4xl lg:text-5xl h-[95px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-white/80 tracking-tight mb-4`}
           >
             <Typewriter
               words={[
@@ -72,11 +72,11 @@ const Banner = () => {
             on building scalable and performance-driven applications.
           </p>
           <div className="flex gap-4 mt-3">
-            <button className="bg-gradient-to-r from-cyan-400 px-4 py-2 rounded-md  hover:to-white/70 transition duration-300 font-[500]">
-              Resume
+            <button className="bg-gradient-to-r from-secondary px-4 py-2 rounded-md  hover:to-white/70 transition duration-300 font-[500] flex items-center gap-2">
+              <FaDownload /> Resume
             </button>
-            <button className="border border-cyan-400 px-4 py-2 rounded-md hover:shadow-sm hover:shadow-cyan-500 duration-300 font-[500]">
-              Contact Me
+            <button className="border border-secondary px-4 py-2 rounded-md hover:shadow-sm hover:shadow-primary duration-300 font-[500] flex items-center gap-2">
+              <FaPhoneAlt /> Contact Me
             </button>
           </div>
           <div className="flex w-full flex-col border-opacity-50">
@@ -86,7 +86,7 @@ const Banner = () => {
             {socialLink.map((s) => (
               <div
                 key={s.link}
-                className="border border-cyan-400 rounded-[4px] p-1.5 hover:shadow-sm hover:shadow-cyan-300 cursor-pointer duration-200"
+                className="border border-secondary rounded-[4px] p-1.5 hover:shadow-sm hover:shadow-secondary cursor-pointer duration-200"
               >
                 {s.icon}
               </div>
@@ -95,12 +95,12 @@ const Banner = () => {
         </div>
         {/* Profile picture */}
         <figure className="relative">
-          <div className="absolute inset-0 rounded-[150px] rounded-tr-lg rounded-bl-2xl z-[-1] bg-gradient-to-br from-cyan-500/20 via-sky-500/20 to-cyan-500/20  animate-pulse"></div>
+          <div className="absolute inset-0 rounded-[150px] rounded-tr-lg rounded-bl-2xl z-[-1] bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20  animate-pulse"></div>
 
           <Image
             src={profile}
             alt="Intisar Ahmed Siyan"
-            className="rounded-[150px] rounded-tr-lg rounded-bl-2xl border-r-[3px] border-b-[3px] border-cyan-600 shadow-lg shadow-cyan-500 w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] object-cover"
+            className="rounded-[150px] rounded-tr-lg rounded-bl-2xl border-r-[3px] border-b-[3px] border-primary shadow-lg shadow-primary w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] object-cover"
           />
           <motion.div
             animate={{
@@ -125,9 +125,9 @@ const Banner = () => {
               duration: 2,
               repeat: Infinity,
             }}
-            className="absolute -right-3 md:right-[0px] bottom-5 text-black font-[600] bg-sky-100 rounded-lg text-xs lg:text-md lg:text-[16px] px-5 py-2 text-center leading-5"
+            className="absolute -right-3 md:right-[0px] bottom-5 text-black font-[600] bg-sky-50 rounded-lg text-xs lg:text-md lg:text-[16px] px-5 py-2 text-center leading-5"
           >
-            <span className="block text-xl md:text-2xl lg:text-3xl font-bold text-cyan-700">
+            <span className="block text-xl md:text-2xl lg:text-3xl font-bold text-primary">
               5+
             </span>{" "}
             Satisfied Clients
