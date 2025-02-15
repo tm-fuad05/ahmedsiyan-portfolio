@@ -106,12 +106,16 @@ const Skills = () => {
             ))}
           </TabList>
           <TabPanels>
-            <TabPanel className={"flex flex-wrap gap-5"}>
+            <TabPanel
+              className={
+                "grid grid-cols-3 md:flex md:flex-wrap items-center justify-center gap-5"
+              }
+            >
               {skills.map((s) => (
                 <div
                   key={s.name}
                   className="border-[2px] border-gray-600 border-dashed hover:border-primary bg-blue-400/5 backdrop-blur-m
-                  d transition duration-300 text-white rounded-lg p-4 flex flex-col items-center gap-4 w-[120px] group"
+                  d transition duration-300 text-white rounded-lg p-4 flex flex-col md:w-[120px] items-center gap-4 group"
                 >
                   <Image
                     src={s.icon}

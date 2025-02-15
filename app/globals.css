@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  overflow-x: hidden;
-}
-
-.grid-background {
-  background-color: #0f172a; /* Dark Background */
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px; /* Grid Size */
-  opacity: 0.9;
-}
-
 .react-tabs__tab--selected {
   @apply border-blue-400 text-blue-400;
 }

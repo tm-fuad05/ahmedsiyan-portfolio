@@ -22,12 +22,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`  ${montserrat.className} bg-black text-white`}>
+      <body
+        className={`  ${montserrat.className} bg-black text-white overflow-x-hidden`}
+      >
         <header>
           <Navbar />
         </header>
         <main>{children}</main>
-        <footer>{/* <Footer /> */}</footer>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

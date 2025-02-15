@@ -98,6 +98,7 @@ const Navbar = () => {
       >
         {navLinks.map((link) => (
           <Link
+            onClick={() => setMenuOpen(!menuOpen)}
             key={link.name}
             to={link.path}
             offset={-80}

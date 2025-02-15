@@ -37,7 +37,7 @@ const Banner = () => {
       id="home"
       className="min-h-screen px-6 md:px-10 lg:px-16 flex items-center pt-20 md:pt-10 relative"
     >
-      <div className="absolute left-[50px] -top-0 w-[450px] h-[450px] rounded-full blur-[270px] bg-secondary/60" />
+      <div className="absolute left-[50px] -top-0 w-[250px] h-full md:w-[450px] md:h-[450px] rounded-full blur-[270px] bg-secondary/60" />
 
       {/* Main */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-16 relative">
@@ -60,7 +60,7 @@ const Banner = () => {
           </h4>
 
           <h1
-            className={`text-4xl lg:text-5xl h-[95px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-white/80 tracking-tight mb-4`}
+            className={`text-4xl lg:text-5xl lg:h-[95px] h-[75px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-white/80 tracking-tight mb-4`}
           >
             <Typewriter
               words={[
