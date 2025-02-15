@@ -11,8 +11,8 @@ export default function Home() {
     <div className="">
       <Banner />
       <AboutMe />
-      {/* <Experience /> */}
       <Skills />
+      <Experience />
       <Projects />
       <Footer />
       <ScrollToUp />

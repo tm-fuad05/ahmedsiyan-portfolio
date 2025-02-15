@@ -33,7 +33,7 @@ const AboutMe = () => {
   return (
     <div
       id="about"
-      className="py-10 mt-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+      className="py-10 mt-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
     >
       <div>
         <div className="grid md:grid-cols-2">

@@ -89,7 +89,7 @@ const Skills = () => {
         <SectionTitile title={"skills"} />
 
         <TabGroup>
-          <TabList className="w-fit mx-auto flex space-x-0.5 border border-gray-800 rounded-full p-1 mb-10">
+          <TabList className="w-fit mx-auto flex space-x-0.5 border border-gray-800 rounded-full p-1 mb-8">
             {["Skills", "Tools"].map((tab, idx) => (
               <Tab
                 key={idx}
@@ -110,7 +110,8 @@ const Skills = () => {
               {skills.map((s) => (
                 <div
                   key={s.name}
-                  className="border-[2px] border-gray-600 border-dashed hover:border-primary transition duration-300 text-white rounded-lg p-4 flex flex-col items-center gap-4 w-[120px] group"
+                  className="border-[2px] border-gray-600 border-dashed hover:border-primary bg-blue-400/5 backdrop-blur-m
+                  d transition duration-300 text-white rounded-lg p-4 flex flex-col items-center gap-4 w-[120px] group"
                 >
                   <Image
                     src={s.icon}
@@ -126,7 +127,8 @@ const Skills = () => {
               {tools.map((t) => (
                 <div
                   key={t.name}
-                  className="border-[2px] border-gray-600 border-dashed hover:border-primary transition duration-300 text-white rounded-lg p-4 flex flex-col items-center gap-4 w-28 group"
+                  className="border-[2px] border-gray-600 border-dashed hover:border-primary bg-blue-400/5 backdrop-blur-m
+                  d transition duration-300 text-white rounded-lg p-4 flex flex-col items-center gap-4 w-28 group"
                 >
                   <Image
                     src={t.icon}

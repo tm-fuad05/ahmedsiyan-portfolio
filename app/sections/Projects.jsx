@@ -46,11 +46,14 @@ const Projects = () => {
   ];
 
   return (
-    <div id="projects" className="px-6 md:px-10 lg:px-12 relative">
+    <div
+      id="projects"
+      className="px-6 md:px-10 lg:px-12 my-24 lg:mt-32 relative"
+    >
       <div className="absolute top-20 bg-primary/20 md:bg-primary/50 w-11/12 h-full md:h-[200px]  blur-[150px] animate-pulse" />
       <div>
         <SectionTitile title={"projects"} />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-5">
           {projects.map((project) => (
             <div
               data-aos="fade-right"
