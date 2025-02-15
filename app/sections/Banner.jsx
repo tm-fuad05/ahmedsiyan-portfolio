@@ -48,7 +48,13 @@ const Banner = () => {
           className="absolute w-16 -top-8 rotate-[200deg] left-1/3 opacity-10 hidden lg:block"
         />
         {/* Content */}
-        <div className="flex flex-col gap-3 md:w-1/2">
+
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex flex-col gap-3 md:w-1/2"
+        >
           <h4 className="text-lg lg:text-xl font-medium">
             Hello, I'm Intisar Ahmed Siyan
           </h4>
@@ -95,15 +101,20 @@ const Banner = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
         {/* Profile picture */}
-        <figure className="relative">
-          <div className="absolute inset-0 rounded-[150px] rounded-tr-lg rounded-bl-2xl z-[-1] bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20   animate-pulse"></div>
+        <motion.figure
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative"
+        >
+          <div className="absolute inset-0 rounded-[150px] rounded-tr-lg rounded-bl-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20   animate-pulse"></div>
 
           <Image
             src={profile}
             alt="Intisar Ahmed Siyan"
-            className="rounded-[150px] rounded-tr-lg rounded-bl-2xl border-r-[3px] border-b-[3px] border-primary shadow-lg shadow-primary w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] object-cover"
+            className="relative rounded-[150px] rounded-tr-lg rounded-bl-2xl border-r-[3px] border-b-[3px] border-primary shadow-lg shadow-primary w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] object-cover"
           />
           <motion.div
             animate={{
@@ -135,7 +146,7 @@ const Banner = () => {
             </span>{" "}
             Satisfied Clients
           </motion.div>
-        </figure>
+        </motion.figure>
       </div>
     </div>
   );
