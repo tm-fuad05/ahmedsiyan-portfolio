@@ -33,11 +33,14 @@ const Banner = () => {
   ];
 
   return (
-    <div className="min-h-screen px-6 md:px-10 lg:px-16 flex items-center pt-20 md:pt-10">
+    <div
+      id="home"
+      className="min-h-screen px-6 md:px-10 lg:px-16 flex items-center pt-20 md:pt-10 relative"
+    >
       <div className="absolute left-[50px] -top-0 w-[450px] h-[450px] rounded-full blur-[270px] bg-secondary/60" />
 
       {/* Main */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-16 z-10 relative">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-16 relative">
         {/* Arrow */}
         <Image
           src={arrow}
@@ -72,7 +75,7 @@ const Banner = () => {
             on building scalable and performance-driven applications.
           </p>
           <div className="flex gap-4 mt-3">
-            <button className="bg-gradient-to-r from-secondary px-4 py-2 rounded-md  hover:to-white/70 transition duration-300 font-[500] flex items-center gap-2">
+            <button className="bg-gradient-to-r from-secondary px-4 py-2 rounded-md  hover:bg-blue-700 transition duration-300 font-[500] flex items-center gap-2">
               <FaDownload /> Resume
             </button>
             <button className="border border-secondary px-4 py-2 rounded-md hover:shadow-sm hover:shadow-primary duration-300 font-[500] flex items-center gap-2">
@@ -95,7 +98,7 @@ const Banner = () => {
         </div>
         {/* Profile picture */}
         <figure className="relative">
-          <div className="absolute inset-0 rounded-[150px] rounded-tr-lg rounded-bl-2xl z-[-1] bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20  animate-pulse"></div>
+          <div className="absolute inset-0 rounded-[150px] rounded-tr-lg rounded-bl-2xl z-[-1] bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20   animate-pulse"></div>
 
           <Image
             src={profile}

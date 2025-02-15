@@ -37,7 +37,7 @@ const Navbar = () => {
   const navLinks = [
     {
       name: "Home",
-      path: "/",
+      path: "home",
     },
     {
       name: "About Me",
@@ -74,10 +74,10 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                offset={-80}
+                offset={-85}
                 smooth={true}
                 duration={400}
-                className="before:w-0 hover:before:w-full before:bg-blue-300 before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-blue-300 transition-all duration-300 before:left-0 cursor-pointer"
+                className="before:w-0 hover:before:w-full before:bg-secondary before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-secondary transition-all duration-300 before:left-0 cursor-pointer"
               >
                 {link.name}
               </Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
             offset={-80}
             smooth={true}
             duration={400}
-            className="hover:text-blue-300 cursor-pointer text-white"
+            className="hover:text-secondary cursor-pointer text-white"
           >
             {link.name}
           </Link>

@@ -1,10 +1,14 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaBriefcase, FaGraduationCap, FaAward } from "react-icons/fa";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import SharedTabs from "../shared/SharedTabs";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const AboutMe = () => {
+  useEffect(() => {
+    Aos.init({ duration: 500 });
+  }, []);
   const experiences = [
     {
       icon: <FaBriefcase />,
@@ -27,10 +31,13 @@ const AboutMe = () => {
   ];
 
   return (
-    <div className="py-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div
+      id="about"
+      className="py-10 mt-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+    >
       <div>
         <div className="grid md:grid-cols-2">
-          {/* Right Column - Content */}
+          {/* Left - Content */}
           <div className="p-8 lg:p-12">
             <div className="space-y-12">
               <section>
@@ -51,14 +58,15 @@ const AboutMe = () => {
               </section>
             </div>
           </div>
-          {/* Left Column - Cards */}
+          {/* Right - Cards */}
           <div className="p-8 lg:p-12 space-y-6 border-t md:border-t-0 md:border-l border-gray-700">
             <div className="sticky top-12">
               <div>
                 {experiences.map((exp, index) => (
                   <div
+                    data-aos="fade-left"
                     key={index}
-                    className="relative flex gap-3 px-10 py-5 border-b border-gray-600 hover:bg-gradient-to-r hover:from-primary/80 hover:to-transparent  transition-all  duration-1000 group"
+                    className="relative flex gap-3 px-10 py-5 border-b border-gray-600 hover:bg-gradient-to-r hover:from-transparent via-primary/50 hover:to-transparent  transition-all  duration-1000 group"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-primary to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
                     <div className="text-xl md:text-2xl p-3 rounded-full bg-primary w-fit h-fit group-hover:bg-white group-hover:text-primary z-10 transition-all duration-300">
