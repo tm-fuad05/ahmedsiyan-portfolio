@@ -4,6 +4,7 @@ import profile from "@/public/images/profile.png";
 import arrow from "@/public/images/arrow.png";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
+
 import { motion } from "motion/react";
 
 // ICons
@@ -75,6 +76,7 @@ const Banner = () => {
               delaySpeed={1000}
             />
           </h1>
+
           <p className="text-sm text-gray-300">
             Passionate web developer with expertise in React and modern
             JavaScript. Crafting intuitive and dynamic user experiences, focused
