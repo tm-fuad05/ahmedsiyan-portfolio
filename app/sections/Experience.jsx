@@ -42,7 +42,7 @@ const Experience = () => {
     <div id="exp" className="px-6 md:px-10 lg:px-12">
       <div data-aos="fade-up">
         <SectionTitile title={"experience"} />
-        <div className="grid grid-cols-1 md;grid-cols-2 lg:grid-cols-3 gap-8 pt-5">
+        <div className="grid grid-cols-1 md;grid-cols-2 lg:grid-cols-3 gap-6 pt-5">
           {experiences.map((exp, index) => (
             <div
               key={index}
