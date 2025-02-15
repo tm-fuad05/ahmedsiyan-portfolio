@@ -66,7 +66,7 @@ const AboutMe = () => {
                   <div
                     data-aos="fade-right"
                     key={index}
-                    className="overflow-x-hidden relative flex gap-3 px-10 py-5 border-b border-gray-600 hover:bg-gradient-to-r hover:from-transparent via-primary/50 hover:to-transparent  transition-all  duration-1000 group"
+                    className="overflow-x-hidden relative flex gap-3 px-4 md:px-10 py-5 border-b border-gray-600 hover:bg-gradient-to-r hover:from-transparent via-primary/50 hover:to-transparent  transition-all  duration-1000 group"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-primary to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
                     <div className="text-xl md:text-2xl p-3 rounded-full bg-primary w-fit h-fit group-hover:bg-white group-hover:text-primary z-10 transition-all duration-300">
